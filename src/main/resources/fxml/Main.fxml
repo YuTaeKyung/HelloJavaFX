@@ -8,21 +8,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.input.KeyCodeCombination?>
 
-<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: silver;"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.MainController">
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: silver;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.MainController">
     <top>
         <VBox prefHeight="79.0" prefWidth="1024.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
             <children>
-                <MenuBar style="-fx-background-color: #039be5;" >
+                <MenuBar style="-fx-background-color: #039be5;">
                     <menus>
                         <Menu mnemonicParsing="false" text="파일">
                             <items>
                                 <MenuItem mnemonicParsing="false" onAction="#alertLogin" text="저장">
                                     <accelerator>
                                         <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
-                                    </accelerator></MenuItem>
-                                <MenuItem mnemonicParsing="false" onAction="#alertLogin" text="불러오기">
-                                    <accelerator>
-                                        <KeyCodeCombination alt="DOWN" code="O" control="UP" meta="UP" shift="UP" shortcut="UP" />
                                     </accelerator></MenuItem>
                                 <MenuItem mnemonicParsing="false" onAction="#exit" text="닫기">
                                     <accelerator>
