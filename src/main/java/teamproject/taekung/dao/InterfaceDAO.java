@@ -8,9 +8,10 @@ import java.sql.*;
 public class InterfaceDAO {
     static final String DRV = "oracle.jdbc.OracleDriver";
     //static final String URL = "jdbc:oracle:thin:@//192.168.0.35:1521/xe";
-    static final String URL = "jdbc:oracle:thin:@//192.168.112.128:1521/xe";
-    //static final String USR = "mkjh1113";
-    static final String USR = "taekung";
+    //static final String URL = "jdbc:oracle:thin:@//192.168.112.128:1521/xe";
+    static final String URL = "jdbc:oracle:thin:@//192.168.137.128:1521/xe";
+    static final String USR = "mkhj1113";
+//    static final String USR = "taekung";
    // static final String PWD = "MKJH1113";
     static final String PWD = "123456";
 
