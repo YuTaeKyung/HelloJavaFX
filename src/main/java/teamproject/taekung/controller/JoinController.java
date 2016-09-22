@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import teamproject.taekung.VO.UserVO;
 import teamproject.taekung.dao.JoinDao;
 
@@ -70,8 +71,11 @@ public class JoinController {
 
             if (JoinDao.s) {
                 alertID("가입실패!!");
+
             } else {
                 alertID("가입완료!!");
+                Stage stage = (Stage) joinPage.getScene().getWindow();
+                stage.close();
             }
 
         }
