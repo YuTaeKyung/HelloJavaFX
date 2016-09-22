@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/index.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.BookController">
+   <bottom>
+      <VBox alignment="CENTER" prefHeight="43.0" prefWidth="800.0" style="-fx-background-color: #039be5;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Copyright c xxx. All Rights Reserved." textFill="#f8f4f4" />
+         </children></VBox>
+   </bottom>
+   <top>
+      <VBox prefHeight="38.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #039be5;">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#goToMember" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15px;" text="고객관리" />
+                  <Button mnemonicParsing="false" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15px;" text="도서관리" />
+                  <Button mnemonicParsing="false" onAction="#goToRent" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15px;" text="대여관리" />
+                  <Button mnemonicParsing="false" onAction="#exitModal" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15px;" text="나가기" />
+               </items>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <right>
+      <GridPane prefHeight="500.0" prefWidth="250.0" style="-fx-background-color: #81d4fa;" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="북코드">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="책제목" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="bno" GridPane.columnIndex="1" />
+            <TextField fx:id="bname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="genre" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="장르" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="저자" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="출판사" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="author" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="publisher" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.columnSpan="2" GridPane.rowIndex="7">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#selectBook" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="조회" />
+                  <Button mnemonicParsing="false" onAction="#updateBook" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="수정" />
+                  <Button mnemonicParsing="false" onAction="#addBook" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="추가" />
+                  <Button mnemonicParsing="false" onAction="#deleteBook" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="삭제" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#reset" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="초기화" />
+               </children>
+            </HBox>
+            <Label text="이미지" GridPane.rowIndex="5">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <TextField fx:id="img" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="57.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="143.0" minWidth="10.0" prefWidth="123.0" />
+         </columnConstraints>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </right>
+   <center>
+      <TableView fx:id="bookTable" onMouseClicked="#showBook" prefHeight="500.0" prefWidth="565.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
+         <columns>
+            <TableColumn fx:id="bnoTC" prefWidth="85.0" text="북코드" />
+            <TableColumn fx:id="bnameTC" prefWidth="148.0" text="책제목" />
+            <TableColumn fx:id="genreTC" prefWidth="95.0" text="장르" />
+            <TableColumn fx:id="authorTC" prefWidth="78.0" text="저자" />
+            <TableColumn fx:id="publisherTC" prefWidth="142.0" text="출판사" />
+            <TableColumn fx:id="imgTC" minWidth="0.0" prefWidth="0.0" text="이미지" />
+         </columns>
+      </TableView>
+   </center>
+</BorderPane>

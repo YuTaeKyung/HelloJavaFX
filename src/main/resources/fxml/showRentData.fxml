@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="160.0" prefWidth="500.0" style="-fx-background-color: #81d4fa;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.showRentDataController">
+   <center>
+      <GridPane hgap="10.0" prefHeight="120.0" prefWidth="340.0" BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="67.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="395.0" minWidth="0.0" prefWidth="95.0" />
+            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="95.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="395.0" minWidth="10.0" prefWidth="129.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="61.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="130.0" minHeight="0.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="175.0" minHeight="8.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="173.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="대여번호 :" />
+            <Label text="회원번호 :" GridPane.rowIndex="1" />
+            <Label text="회원이름 :" GridPane.rowIndex="2" />
+            <Label text="도서번호 :" GridPane.columnIndex="2" />
+            <Label text="도서명 :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label fx:id="rno" text="Label" GridPane.columnIndex="1" />
+            <Label fx:id="mno" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="mname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="bno" text="Label" GridPane.columnIndex="3" />
+            <Label fx:id="bname" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <Label text="대여일 :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label fx:id="regdate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Label text="반납일 :" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label fx:id="duedate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </GridPane>
+   </center>
+   <top>
+      <Pane prefHeight="20.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <Pane prefHeight="20.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <Pane prefHeight="240.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
+   </left>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <right>
+      <Pane prefHeight="240.0" prefWidth="30.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

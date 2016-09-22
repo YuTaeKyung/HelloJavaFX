@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="500.0" prefWidth="360.0"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.JoinController">
+   <children>
+      <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #81d4fa;">
+         <children>
+            <VBox fx:id="agreement" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Label text="도서대여프로그램 이용약관">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextArea editable="false" prefHeight="160.0" prefWidth="300.0" style="-fx-background-color: #2B2B2B;" text="제 1조 (목적)&#10;&#10;이 이용약관(이하 '약관'이라 합니다)은 이용고객이 네이버 주식회사(이하 ‘회사’라 합니다)가 제공하는 ‘소프트웨어’를 이용함에 있어 &#10;필요한 조건 및 절차에 관한 사항과 기타 필요한 사항을 규정함을 목적으로 합니다. &#10;제 2조 (용어의 정의) &#10;&#10;① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.&#10;가. ‘소프트웨어’라 함은 통합설치프로그램을 통해 설치 및 제공되거나 또는 개별프로그램을 선택적으로 다운로드 받아 설치 및 제공되는 프로그램들을 말합니다.(‘소프트웨어’에는 툴바, 네이버 백신, 포토뷰어, 비디오매니저 등의 개별프로그램(이하 ‘프로그램’이라 합니다.) 이 포함되며, &#10;이러한 ‘프로그램’은 추가되거나 제외 될 수 있습니다.) &#10;나. 회원이라 함은 이 약관에 동의한 후 ‘소프트웨어’를 설치하고 이용하는 이용고객을 의미합니다. 단, 네이버 백신의 회원은 개인에 한하며, 법인 및 &#10;관공서 등은 제외됩니다.&#10;다. ‘연동서비스’라 함은 ‘프로그램’ 이 정상적으로 제공될 수 있도록 ‘회사’가 ‘프로그램’과의 연동을 통해 운영 및 관리하는 서비스를 의미합니다. &#10;(네이버 백신, 포토뷰어, 비디오매니저 등의 일부 기능 또는 전체 기능이 이에 해당됩니다.) &#10;② 이 약관에서 사용하는 용어 중 제1항에서 정하지 아니한 것은 서비스별 안내(FAQ) 또는 네이버 이용약관, 관계 법령에서 정하는 바에 따르며, &#10;그 외에는 일반 관례에 따릅니다. &#10;제 3조 (이용약관의 효력 및 변경)&#10;&#10;① 이 약관은 &quot;소프트웨어&quot;의 설치 또는 서비스의 이용 시에 &quot;회사&quot;가 안내하고 ‘회원’이 동의를 함으로써 효력이 발생합니다.&#10;② &quot;회사&quot;는 관련 법령에 위배되지 않는 범위 내에서 이 약관의 내용을 개정할 수 있으며, 개정약관은 제1항에 따라 ‘회원’이 동의함으로써 &#10;효력이 발생합니다.&#10;③ ‘회원’은 개정된 약관에 동의하지 않을 경우, &quot;소프트웨어&quot;를 삭제함으로써 이용계약을 해지할 수 있습니다. &#10;제 4조 (연동서비스의 제공 및 소프트웨어의 유지 관리)&#10;&#10;① 연동서비스 제공은 회사의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간 운영을 원칙으로 합니다.&#10;단, 회사는 시스템 정기점검, 증설 및 교체를 위해 회사가 정한 날이나 시간에 연동서비스를 일시 중단할 수 있으며, 예정되어 있는 작업으로 인한 &#10;연동서비스 일시 중단은 ‘프로그램’ 별 홈페이지 또는 ‘프로그램’ 내 공지 등을 통해 사전에 공지합니다.&#10;② 회사는 국가비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 연동서비스 제공이 불가능할 경우, 연동서비스의&#10;전부 또는 일부를 제한하거나 중지할 수 있습니다. 다만 이 경우 그 사유 및 기간 등을 회원에게 사전 또는 사후에 공지합니다.&#10;③ 회사는 연동서비스를 특정범위로 분할하여 각 범위 별로 이용가능시간을 별도로 지정할 수 있습니다. 다만 이 경우 그 내용을 공지합니다. ">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <CheckBox fx:id="checkBox1" mnemonicParsing="false" text="동의합니다">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Label text="개인정보 수집및 이용동의">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="22.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextArea editable="false" prefHeight="160.0" prefWidth="300.0" text="제 1조 (목적)&#10;&#10;이 이용약관(이하 '약관'이라 합니다)은 이용고객이 네이버 주식회사(이하 ‘회사’라 합니다)가 제공하는 ‘소프트웨어’를 이용함에 있어 &#10;필요한 조건 및 절차에 관한 사항과 기타 필요한 사항을 규정함을 목적으로 합니다. &#10;제 2조 (용어의 정의) &#10;&#10;① 이 약관에서 사용하는 용어의 정의는 다음과 같습니다.&#10;가. ‘소프트웨어’라 함은 통합설치프로그램을 통해 설치 및 제공되거나 또는 개별프로그램을 선택적으로 다운로드 받아 설치 및 제공되는 프로그램들을 말합니다.(‘소프트웨어’에는 툴바, 네이버 백신, 포토뷰어, 비디오매니저 등의 개별프로그램(이하 ‘프로그램’이라 합니다.) 이 포함되며, &#10;이러한 ‘프로그램’은 추가되거나 제외 될 수 있습니다.) &#10;나. 회원이라 함은 이 약관에 동의한 후 ‘소프트웨어’를 설치하고 이용하는 이용고객을 의미합니다. 단, 네이버 백신의 회원은 개인에 한하며, 법인 및 &#10;관공서 등은 제외됩니다.&#10;다. ‘연동서비스’라 함은 ‘프로그램’ 이 정상적으로 제공될 수 있도록 ‘회사’가 ‘프로그램’과의 연동을 통해 운영 및 관리하는 서비스를 의미합니다. &#10;(네이버 백신, 포토뷰어, 비디오매니저 등의 일부 기능 또는 전체 기능이 이에 해당됩니다.) &#10;② 이 약관에서 사용하는 용어 중 제1항에서 정하지 아니한 것은 서비스별 안내(FAQ) 또는 네이버 이용약관, 관계 법령에서 정하는 바에 따르며, &#10;그 외에는 일반 관례에 따릅니다. &#10;제 3조 (이용약관의 효력 및 변경)&#10;&#10;① 이 약관은 &quot;소프트웨어&quot;의 설치 또는 서비스의 이용 시에 &quot;회사&quot;가 안내하고 ‘회원’이 동의를 함으로써 효력이 발생합니다.&#10;② &quot;회사&quot;는 관련 법령에 위배되지 않는 범위 내에서 이 약관의 내용을 개정할 수 있으며, 개정약관은 제1항에 따라 ‘회원’이 동의함으로써 &#10;효력이 발생합니다.&#10;③ ‘회원’은 개정된 약관에 동의하지 않을 경우, &quot;소프트웨어&quot;를 삭제함으로써 이용계약을 해지할 수 있습니다. &#10;제 4조 (연동서비스의 제공 및 소프트웨어의 유지 관리)&#10;&#10;① 연동서비스 제공은 회사의 업무상 또는 기술상 특별한 지장이 없는 한 연중무휴, 1일 24시간 운영을 원칙으로 합니다.&#10;단, 회사는 시스템 정기점검, 증설 및 교체를 위해 회사가 정한 날이나 시간에 연동서비스를 일시 중단할 수 있으며, 예정되어 있는 작업으로 인한 &#10;연동서비스 일시 중단은 ‘프로그램’ 별 홈페이지 또는 ‘프로그램’ 내 공지 등을 통해 사전에 공지합니다.&#10;② 회사는 국가비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 연동서비스 제공이 불가능할 경우, 연동서비스의&#10;전부 또는 일부를 제한하거나 중지할 수 있습니다. 다만 이 경우 그 사유 및 기간 등을 회원에게 사전 또는 사후에 공지합니다.&#10;③ 회사는 연동서비스를 특정범위로 분할하여 각 범위 별로 이용가능시간을 별도로 지정할 수 있습니다. 다만 이 경우 그 내용을 공지합니다. ">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                     </font>
+                  </TextArea>
+                  <CheckBox fx:id="checkBox2" mnemonicParsing="false" text="동의합니다">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Button mnemonicParsing="false" onAction="#nextPage" prefHeight="38.0" prefWidth="103.0" style="-fx-background-color: #039be5; -fx-background-radius: 15px;" text="다음으로">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children></StackPane>
+      <BorderPane fx:id="joinPage" prefHeight="200.0" prefWidth="300.0" visible="false">
+         <top>
+            <Label alignment="CENTER" prefHeight="46.0" prefWidth="208.0" style="-fx-background-radius: 50;" text="회 원 가 입" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </Label>
+         </top>
+         <center>
+            <GridPane alignment="CENTER" hgap="10.0" prefHeight="421.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="92.0" minWidth="10.0" prefWidth="86.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="141.0" minWidth="10.0" prefWidth="130.0" />
+                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="99.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="아이디">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="비밀번호" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="이메일" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="전화번호" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="주소" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="업체명" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Label text="비밀번호 확인" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Label>
+                  <Button mnemonicParsing="false" onAction="#checkid" prefHeight="28.0" prefWidth="94.0" style="-fx-background-color: #039be5; -fx-background-radius: 15px;" text="중복체크" textFill="#ebe5e5" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets right="15.0" />
+                     </GridPane.margin></Button>
+                  <TextField fx:id="mid" GridPane.columnIndex="1" />
+                  <PasswordField fx:id="pwd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="repwd" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="phone" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="addr" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <TextField fx:id="sname" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </GridPane>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="54.0" prefWidth="350.0" spacing="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#joinBtn" style="-fx-background-color: #039be5; -fx-background-radius: 15px;" text="가입하기">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#backPage" style="-fx-background-color: #039be5; -fx-background-radius: 15px;" text="이전으로">
+                     <font>
+                        <Font name="Apple SD GothicNeo ExtraBold" size="14.0" />
+                     </font></Button>
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </HBox>
+         </bottom>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <StackPane.margin>
+            <Insets top="10.0" />
+         </StackPane.margin>
+      </BorderPane>
+   </children>
+</StackPane>

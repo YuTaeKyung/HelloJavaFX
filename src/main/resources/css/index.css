@@ -1,0 +1,40 @@
+.menu .label
+{
+    -fx-text-fill: white;
+    /*
+    -fx-font-family: 'Apple SD GothicNeo';
+    */
+    -fx-font-size: 14px;
+
+}
+
+.menu-item .label
+{
+    -fx-text-fill: black;
+    /*
+    -fx-font-family: 'Apple SD GothicNeo';
+    */
+    -fx-font-size: 14px;
+}
+/*
+
+.menu-item
+{
+    -fx-background-color: black;
+}
+
+.menu-item:focused
+{
+    -fx-background-color: darkviolet;
+    -fx-text-fill: white;
+}
+
+.context-menu {
+    -fx-background-color: black;
+
+}
+*/
+
+
+.table-cell { -fx-alignment: center; }
+.table-row-cell:hover { -fx-background-color: #9de7ff;}

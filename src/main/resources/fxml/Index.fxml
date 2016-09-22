@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.input.KeyCodeCombination?>
+
+<BorderPane fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../css/index.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.IndexController">
+    <top>
+        <VBox prefHeight="79.0" prefWidth="1024.0" style="-fx-background-color: skyblue;" BorderPane.alignment="CENTER">
+            <children>
+                <MenuBar style="-fx-background-color: #039be5;">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="파일">
+                            <items>
+                                <Menu mnemonicParsing="false" text="파일 열기">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="회원관리" />
+                                        <MenuItem mnemonicParsing="false" text="도서관리" />
+                                        <MenuItem mnemonicParsing="false" text="대여현황" />
+                                    </items>
+                                </Menu>
+                                <MenuItem mnemonicParsing="false" onAction="#saveData" text="저장">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="S" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator></MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#exit" text="닫기">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="Q" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator></MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="관리">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goToMember" text="회원관리">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="m" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#goToBook" text="도서관리">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="b" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                                <MenuItem mnemonicParsing="false" onAction="#goToRent" text="대여현황관리">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="DOWN" code="r" control="UP" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator>
+                                </MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="창">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#goHome" text="Reset">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator></MenuItem>
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="도움말">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#info" text="만든이">
+                                    <accelerator>
+                                        <KeyCodeCombination alt="UP" code="I" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                                    </accelerator></MenuItem>
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+                <ToolBar prefHeight="74.0" prefWidth="1024.0" style="-fx-background-color: #40c4ff;">
+                    <items>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#goHome" prefHeight="52.0" prefWidth="102.0" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15;" textFill="#f8f4f4">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                            </font>
+                            <graphic>
+                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="Reset">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="(Ctrl + R)" />
+                                    </children>
+                                </VBox>
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#goToMember" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15;" textFill="#f8f5f5">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                            </font>
+                            <graphic>
+                                <VBox alignment="CENTER" prefHeight="25.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="회원관리">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="(Alt + M)" />
+                                    </children>
+                                </VBox>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToBook" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15;" textFill="#f8f4f4">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                            </font>
+                            <graphic>
+                                <VBox alignment="CENTER" prefHeight="26.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="도서관리">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="(Alt + B)" />
+                                    </children>
+                                </VBox>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#goToRent" style="-fx-background-color: #e1f5fe; -fx-background-radius: 15;" textFill="#f8f5f5">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                            </font>
+                            <graphic>
+                                <VBox alignment="CENTER" prefHeight="40.0" prefWidth="120.0">
+                                    <children>
+                                        <Label text="대여현황관리">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="(Alt + R)" />
+                                    </children>
+                                </VBox>
+                            </graphic>
+                        </Button>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" prefHeight="52.0" prefWidth="100.0" style="-fx-background-color: #e1f5fe; -fx-background-radius: 20px;" textFill="#f2efef">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="18.0" />
+                            </font>
+                            <graphic>
+                                <VBox alignment="CENTER" prefHeight="0.0" prefWidth="100.0">
+                                    <children>
+                                        <Label text="종료">
+                                            <font>
+                                                <Font size="18.0" />
+                                            </font>
+                                        </Label>
+                                        <Label text="(Alt + Q)" />
+                                    </children>
+                                </VBox>
+                            </graphic>
+                        </Button>
+                    </items>
+                    <padding>
+                        <Insets left="20.0" right="20.0" />
+                    </padding>
+                </ToolBar>
+            </children>
+        </VBox>
+    </top>
+    <bottom>
+        <VBox prefHeight="40.0" prefWidth="1024.0" style="-fx-background-color: #039be5;" BorderPane.alignment="CENTER">
+            <children>
+                <Label text="프로그램에 관한 정보를 보려면 &lt;Ctrl + I&gt;키를 누르세요">
+                    <padding>
+                        <Insets left="15.0" />
+                    </padding>
+                    <VBox.margin>
+                        <Insets top="12.0" />
+                    </VBox.margin>
+                </Label>
+            </children>
+        </VBox>
+    </bottom>
+    <center>
+        <BorderPane prefHeight="649.0" prefWidth="1024.0" style="-fx-background-color: #81d4fa;" BorderPane.alignment="CENTER">
+            <bottom>
+                <StackPane layoutY="39.0" prefHeight="424.0" prefWidth="1024.0" style="-fx-background-color: #039be5;">
+                    <children>
+                        <TableView fx:id="showMember" fixedCellSize="-2.0" onMouseClicked="#memberLabel" prefHeight="455.0" prefWidth="1024.0" style="-fx-background-color: white;">
+                            <columns>
+                                <TableColumn fx:id="mno" prefWidth="170.0" text="회원번호" />
+                                <TableColumn fx:id="name" prefWidth="170.0" text="이름" />
+                                <TableColumn fx:id="phone" prefWidth="220.0" text="전화번호" />
+                                <TableColumn fx:id="cellphone" prefWidth="220.0" text="휴대폰" />
+                                <TableColumn fx:id="birthdate" prefWidth="242.0" text="생년월일" />
+                                <TableColumn fx:id="email" minWidth="0.0" prefWidth="0.0" text="이메일" />
+                                <TableColumn fx:id="addr" minWidth="0.0" prefWidth="0.0" text="주소" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="showBook" onMouseClicked="#bookLabel" prefHeight="200.0" prefWidth="200.0" visible="false">
+                            <columns>
+                                <TableColumn fx:id="ISBN" prefWidth="250.0" text="ISBN" />
+                                <TableColumn fx:id="bnameTC" minWidth="0.0" prefWidth="250.0" text="도서명" />
+                                <TableColumn fx:id="authorTC" prefWidth="250.0" text="저자" />
+                                <TableColumn fx:id="publisherTC" prefWidth="257.0" text="출판사" />
+                                <TableColumn fx:id="bimgTC" minWidth="0.0" prefWidth="0.0" text="xx" />
+                            </columns>
+                        </TableView>
+                        <TableView fx:id="showRent" onMouseClicked="#rentLabel" prefHeight="200.0" prefWidth="200.0" visible="false">
+                            <columns>
+                                <TableColumn fx:id="rno" prefWidth="200.0" text="대여번호" />
+                                <TableColumn fx:id="bnoRTC" prefWidth="200.0" text="ISBN" />
+                                <TableColumn fx:id="mnoRTC" prefWidth="200.0" text="회원번호" />
+                                <TableColumn fx:id="regdateTC" prefWidth="200.0" text="대여일" />
+                                <TableColumn fx:id="duedateTC" prefWidth="207.0" text="반납일" />
+                                <TableColumn fx:id="rBnoTC" minWidth="0.0" prefWidth="0.0" text="dd" />
+                                <TableColumn fx:id="rNameTC" minWidth="0.0" prefWidth="0.0" text="zz" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </StackPane>
+            </bottom>
+            <top>
+                <GridPane hgap="10.0" layoutX="10.0" layoutY="10.0" prefHeight="223.0" prefWidth="1024.0">
+                    <children>
+                        <Label fx:id="eLabel" alignment="CENTER" text="이메일" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="bdLabel" alignment="CENTER" text="생년월일" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="birthdateLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="emailLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="nLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="이름" GridPane.columnIndex="3">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="pLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="전화번호" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="cpLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="휴대폰" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="aLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="주소" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="nameLB" prefHeight="28.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="4">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="phoneLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="cellphoneLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="addrLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                            <children>
+                                <TextField fx:id="memberText" prefHeight="29.0" prefWidth="250.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <TextField fx:id="bookText" prefHeight="27.0" prefWidth="250.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <TextField fx:id="rentText" prefHeight="27.0" prefWidth="250.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+                            <children>
+                                <SplitMenuButton fx:id="memberSelect" mnemonicParsing="false" text="검색조건">
+                                    <items>
+                                        <MenuItem fx:id="selectName" mnemonicParsing="false" onAction="#selectOption" text="이름" />
+                                        <MenuItem fx:id="selectPhone" mnemonicParsing="false" onAction="#selectOption2" text="전화번호" />
+                                    </items>
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                                    </font>
+                                </SplitMenuButton>
+                                <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="145.0" text="회원조회" textAlignment="RIGHT">
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="23.0" prefWidth="248.0" GridPane.rowIndex="1">
+                            <children>
+                                <SplitMenuButton fx:id="bookselect" mnemonicParsing="false" text="검색조건">
+                                    <items>
+                                        <MenuItem fx:id="bookname" mnemonicParsing="false" onAction="#selectbookname" text="도서명" />
+                                        <MenuItem fx:id="author" mnemonicParsing="false" onAction="#selectauthor" text="저자" />
+                                        <MenuItem fx:id="bnumber" mnemonicParsing="false" onAction="#selectbnumber" text="도서번호" />
+                                    </items>
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                                    </font>
+                                </SplitMenuButton>
+                                <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="145.0" text="도서 조회" textAlignment="RIGHT">
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                            <children>
+                                <SplitMenuButton fx:id="selectrent" mnemonicParsing="false" text="검색조건">
+                                    <items>
+                                        <MenuItem fx:id="bnoR" mnemonicParsing="false" onAction="#selectbnoR" text="도서번호" />
+                                        <MenuItem fx:id="mnoR" mnemonicParsing="false" onAction="#selectmnoR" text="회원번호" />
+                                        <MenuItem fx:id="regdateR" mnemonicParsing="false" onAction="#selectregdateR" text="대여일" />
+                                        <MenuItem fx:id="duedateR" mnemonicParsing="false" onAction="#selectduedateR" text="반납일" />
+                                    </items>
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                                    </font>
+                                </SplitMenuButton>
+                                <Label alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="145.0" text="대여 현황 조회" textAlignment="RIGHT">
+                                    <font>
+                                        <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <Button fx:id="memberBtn" mnemonicParsing="false" onAction="#findMember" text="검색" GridPane.columnIndex="2">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="bookBtn" mnemonicParsing="false" onAction="#findBook" text="검색" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Button fx:id="rentBtn" mnemonicParsing="false" onAction="#findRent" text="검색" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="13.0" />
+                            </font>
+                        </Button>
+                        <Label fx:id="dLabel" alignment="CENTER_RIGHT" prefHeight="19.0" prefWidth="150.0" text="반납일" visible="false" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                            <font>
+                                <Font name="Apple SD GothicNeo ExtraBold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="ddLB" prefHeight="19.0" prefWidth="250.0" style="-fx-background-color: silver;" visible="false" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="279.0" minWidth="10.0" prefWidth="251.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="542.0" minWidth="10.0" prefWidth="235.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="542.0" minWidth="10.0" prefWidth="57.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="417.0" minWidth="0.0" prefWidth="113.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.0" minWidth="10.0" prefWidth="340.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                </GridPane>
+            </top>
+        </BorderPane>
+    </center>
+</BorderPane>
