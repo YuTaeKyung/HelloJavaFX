@@ -1,9 +1,8 @@
 CREATE TABLE manager(
-
   id VARCHAR2(20) CONSTRAINT pk_id PRIMARY KEY ,
   pwd VARCHAR2(20) NOT NULL ,
   email VARCHAR2(50) NOT NULL ,
-  phone char(11) NOT NULL ,
+  phone char(13) NOT NULL ,
   address VARCHAR2(100) NOT NULL ,
   storename VARCHAR2(20) NOT NULL
 );
@@ -56,9 +55,6 @@ CREATE TABLE book(
 
 );
 ALTER table book modify bname VARCHAR2(50) not null;
-select * from book;
-DELETE FROM book;
-drop table book CASCADE CONSTRAINTs;
 
 CREATE table rent (
   rno NUMBER CONSTRAINT pk_rno PRIMARY KEY ,
@@ -70,13 +66,15 @@ CREATE table rent (
 SELECT * from rent;
 
 SELECT bno, (regdate+7)FROM rent;
-CREATE SEQUENCE rno;
+drop SEQUENCE mno;
+drop SEQUENCE rno;
 
-drop table rent CASCADE CONSTRAINTs;
+create SEQUENCE mno;
+create SEQUENCE rno;
 
 select rno,mno,bno, regdate, (regdate+7) as duedate from rent order by rno desc;
 
-
+SELECT * from manager;
 
 
 
@@ -85,10 +83,7 @@ select rno, mno ,bno , name from rent JOIN member USING (mno) where rno = 6;
 select rno, mno, bno, name ,bname from rent join member USING (mno) join book USING (bno) where rno = 6;
 
 
-
-
-
-
-
-
-
+drop table book CASCADE CONSTRAINTs;
+drop table member CASCADE CONSTRAINTs;
+drop table manager CASCADE CONSTRAINTs;
+drop table rent CASCADE CONSTRAINTs;

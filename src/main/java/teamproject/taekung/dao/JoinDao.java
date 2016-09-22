@@ -16,9 +16,14 @@ public class JoinDao extends InterfaceDAO{
                                         " VALUES (?,?,?,?,?,?)";
     private static String selectMID = "select id from manager where id =? ";
 
+    public static boolean s = false;
+
+
     public static void joinManager(UserVO user){
         Connection conn = null;
         PreparedStatement pstmt =null;
+
+
         try {
             conn=openConn();
             pstmt = conn.prepareStatement(insertManager);
@@ -35,6 +40,7 @@ public class JoinDao extends InterfaceDAO{
             }
             catch (SQLException e){
                 SqlExceptionAlert.alert("글자수초과");
+                s = true;
             }
 
 

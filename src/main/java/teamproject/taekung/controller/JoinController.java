@@ -2,9 +2,13 @@ package teamproject.taekung.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-import javafx.stage.Stage;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import teamproject.taekung.VO.UserVO;
 import teamproject.taekung.dao.JoinDao;
 
@@ -61,11 +65,15 @@ public class JoinController {
 
 
             UserVO user = new UserVO(mid.getText(), pwd.getText(), email.getText(),phone.getText(), addr.getText(), sname.getText());
-            JoinDao.joinManager(user);
-            alertID("가입완료!!");
 
-            Stage stage = (Stage)main.getScene().getWindow();
-            stage.close();
+            JoinDao.joinManager(user);
+
+            if (JoinDao.s) {
+                alertID("가입실패!!");
+            } else {
+                alertID("가입완료!!");
+            }
+
         }
 
     }
