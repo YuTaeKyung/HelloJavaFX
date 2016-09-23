@@ -9,15 +9,15 @@ public class InterfaceDAO {
 
 
     static final String DRV = "oracle.jdbc.OracleDriver";
- /*   static final String URL = "jdbc:oracle:thin:@//192.168.112.128:1521/xe";
+    static final String URL = "jdbc:oracle:thin:@//192.168.112.128:1521/xe";
     static final String USR = "taekung";
-    static final String PWD = "123456";*/
+    static final String PWD = "123456";
 
 
 
-    static final String URL = "jdbc:oracle:thin:@//192.168.0.35/xe";
+    /*static final String URL = "jdbc:oracle:thin:@//192.168.0.35/xe";
     static final String USR = "mkjh1113";
-    static final String PWD = "MKJH1113";
+    static final String PWD = "MKJH1113";*/
 
     public static Connection openConn(){
         Connection conn = null;

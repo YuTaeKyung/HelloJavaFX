@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
@@ -22,20 +23,62 @@
             <RowConstraints maxHeight="173.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="대여번호 :" />
-            <Label text="회원번호 :" GridPane.rowIndex="1" />
-            <Label text="회원이름 :" GridPane.rowIndex="2" />
-            <Label text="도서번호 :" GridPane.columnIndex="2" />
-            <Label text="도서명 :" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Label fx:id="rno" text="Label" GridPane.columnIndex="1" />
-            <Label fx:id="mno" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="mname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="bno" text="Label" GridPane.columnIndex="3" />
-            <Label fx:id="bname" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Label text="대여일 :" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Label fx:id="regdate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Label text="반납일 :" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label fx:id="duedate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            <Label text="대여번호 :">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="회원번호 :" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="회원이름 :" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="도서번호 :" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label text="도서명 :" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="rno" text="Label" GridPane.columnIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="mno" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="mname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="bno" text="Label" GridPane.columnIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label fx:id="bname" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label text="대여일 :" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="regdate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label text="반납일 :" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Label>
+            <Label fx:id="duedate" text="Label" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
          </children>
          <BorderPane.margin>
             <Insets />

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.control.*?>
@@ -10,7 +11,8 @@
    <center>
       <GridPane hgap="10.0" prefHeight="340.0" prefWidth="430.0" BorderPane.alignment="CENTER">
          <columnConstraints>
-            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="58.0" />
+            <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="61.0" />
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="38.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="311.0" minWidth="10.0" prefWidth="187.0" />
          </columnConstraints>
          <rowConstraints>
@@ -21,16 +23,71 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <Label text="북코드 :" />
-            <Label text="도서명 :" GridPane.rowIndex="1" />
-            <Label text="장르 :" GridPane.rowIndex="2" />
-            <Label text="저자 :" GridPane.rowIndex="3" />
-            <Label text="출판사 :" GridPane.rowIndex="4" />
-            <Label fx:id="bno" text="Label" GridPane.columnIndex="1" />
-            <Label fx:id="bname" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label fx:id="genre" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Label fx:id="author" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label fx:id="publisher" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="북코드">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label text="도서명" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label text="장    르" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label text="저    자" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label text="출판사" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+            <Label fx:id="bno" text="Label" GridPane.columnIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="bname" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="genre" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="author" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label fx:id="publisher" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <Label text=":" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label text=":" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
          </children>
          <BorderPane.margin>
             <Insets />
@@ -43,7 +100,10 @@
    <right>
       <VBox fx:id="vb" alignment="CENTER" prefHeight="340.0" prefWidth="65.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="도서 이미지" />
+            <Label text="도서 이미지">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
             <ImageView fx:id="img" fitHeight="206.0" fitWidth="181.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </VBox>

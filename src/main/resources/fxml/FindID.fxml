@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #81d4fa;"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.FindIDController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="400.0" style="-fx-background-color: #81d4fa;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="teamproject.taekung.controller.FindIDController">
     <top>
         <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #039be5; -fx-background-radius: 30px;" BorderPane.alignment="CENTER">
             <children>
@@ -76,7 +76,10 @@
                                         </HBox>
                                         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                             <children>
-                                                <Label fx:id="id" text="" textFill="#f50606" />
+                                                <Label fx:id="id" text="" textFill="#f50606">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
                                             </children>
                                         </HBox>
                                           <Button mnemonicParsing="false" onAction="#findID" prefHeight="33.0" prefWidth="65.0" style="-fx-background-color: #039be5; -fx-background-radius: 10px;" text="찾기" textAlignment="CENTER" textFill="#fcf6f6" GridPane.columnIndex="1" GridPane.rowIndex="2">
@@ -161,7 +164,10 @@
                                         </HBox>
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4">
                                  <children>
-                                                <Label fx:id="pwd" textFill="#e10303" />
+                                                <Label fx:id="pwd" textFill="#e10303">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font></Label>
                                  </children>
                               </HBox>
                                     </children>
