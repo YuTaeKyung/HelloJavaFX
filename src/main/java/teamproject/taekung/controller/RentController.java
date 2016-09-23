@@ -8,17 +8,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import teamproject.taekung.dao.RentDAO;
+import teamproject.taekung.file.SaveData;
 import teamproject.taekung.model.RentModel;
 
 import java.io.IOException;
@@ -51,7 +50,7 @@ public class RentController implements Initializable {
 
     private static String findmno = "select rno,mno,bno, regdate, (regdate+7) as duedate from rent where mno = ?";
     private static String findbno = "select rno,mno,bno , regdate, (regdate+7) as duedate from rent where bno = ?";
-
+    public static boolean d = false;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -143,17 +142,14 @@ public class RentController implements Initializable {
 
 
     }
-
     public void addRent(ActionEvent event) {
         List<RentModel> lr = RentDAO.selectNo(findbno, bno.getText());
-        List<RentModel> lr2 = RentDAO.selectNo(findmno, bno.getText());
 
-        if(lr.size()>0){
-            alert("해당 도서는 지금 대여중입니다!!");
-        } else if(mno.getText().equals("")||bno.getText().equals("")){
+
+        if(mno.getText().equals("")||bno.getText().equals("")){
             alert("회원번호와 도서번호를 확인해주세요");
-        } else if(lr2.size()==0){
-            alert("입력한 회원번호는 없는 번호입니다");
+        } else if(lr.size()>0){
+            alert("해당 도서는 지금 대여중입니다!!");
         }
 
         else
@@ -162,24 +158,27 @@ public class RentController implements Initializable {
             RentDAO.addRent(r);
 
         }
-
         rlist.clear();
 
         for(RentModel rm : RentDAO.selectRentAll()){
             rlist.add(rm);
         }
+        SaveData.saveRent(rlist);
     }
-
 
 
     public void deleteRent(ActionEvent event) {
 
-        RentDAO.deleteRent(rno.getText());
+        RentController.alertDelete(event,null);
+            if (d) {
+            RentDAO.deleteRent(rno.getText());
 
-        rlist.clear();
+            rlist.clear();
 
-        for(RentModel r : RentDAO.selectRentAll()) {
-            rlist.add(r);
+            for (RentModel r : RentDAO.selectRentAll()) {
+                rlist.add(r);
+            }
+            d = false;
         }
 
     }
@@ -229,5 +228,26 @@ try {
         alt.setHeaderText(null);
         alt.setContentText(s);
         alt.showAndWait();
+    }
+
+    public static void alertDelete(ActionEvent ae,WindowEvent we){
+        Alert alt = new Alert(Alert.AlertType.CONFIRMATION);
+        alt.setTitle("데이터 삭제");
+        alt.setHeaderText(null);
+        alt.setContentText("데이터를 삭제하시겠습니까?");
+
+        ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        ButtonType no = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alt.getButtonTypes().setAll(ok,no);
+
+
+        String text = alt.showAndWait().get().getText();
+
+        if(text.equals("OK")){
+            d = true;
+        } else {
+            if(ae !=null) ae.consume();
+            if(we !=null) we.consume();
+        }
     }
 }

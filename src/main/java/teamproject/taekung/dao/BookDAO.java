@@ -28,12 +28,12 @@ public class BookDAO extends InterfaceDAO{
         conn = openConn();
         try {
             pstmt = conn.prepareStatement(selectAll);
-           rs = pstmt.executeQuery();
+            rs = pstmt.executeQuery();
 
 
             while (rs.next()){
                 BookModel b = new BookModel(rs.getString("bno"),rs.getString("bname"),rs.getString("genre"),rs.getString("author"),
-                                    rs.getString("publisher"),rs.getString("bimg"));
+                        rs.getString("publisher"),rs.getString("bimg"));
 
                 blist.add(b);
 
@@ -91,7 +91,12 @@ public class BookDAO extends InterfaceDAO{
 
             pstmt.setString(1,s);
 
-            pstmt.executeUpdate();
+            try {
+                pstmt.executeUpdate();
+            }
+            catch (SQLException e){
+                SqlExceptionAlert.alert("해당 도서는 현재 대여중이라 삭제할수 없습니다");
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();

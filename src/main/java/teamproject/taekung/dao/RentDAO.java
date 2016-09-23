@@ -15,7 +15,7 @@ public class RentDAO extends InterfaceDAO{
     private static String insertRent = "insert into rent (rno,mno,bno) VALUES (rno.nextval,?,?)";
     private static String selectAll = "select rno,mno,bno, regdate, (regdate+7) as duedate from rent order by rno desc";
     private static String updateRent = "update rent set rno=?, mno=?, bno = ? , regdate = ? where "  +
-                                        "  rno = ?";
+            "  rno = ?";
     private static String viewRent = "select rno, mno, bno,regdate,(regdate+7) as duedate, name ,bname from rent join member USING (mno) join book USING (bno) where rno = ?";
     private static String dropRent = "delete from rent where rno = ?";
 
@@ -61,7 +61,11 @@ public class RentDAO extends InterfaceDAO{
             try {
                 pstmt.executeUpdate();
             }
+            catch (SQLIntegrityConstraintViolationException ex){
+                SqlExceptionAlert.alert("없는 회원 번호");
+            }
             catch (SQLException e){
+
                 SqlExceptionAlert.alert("글자수초과");
             }
 
@@ -70,7 +74,7 @@ public class RentDAO extends InterfaceDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            closeConn(conn,pstmt,null);
+            closeConn(conn, pstmt, null);
         }
     }
 
@@ -92,6 +96,9 @@ public class RentDAO extends InterfaceDAO{
             try {
                 pstmt.executeUpdate();
             }
+            catch (SQLIntegrityConstraintViolationException ex){
+                SqlExceptionAlert.alert("없는 회원 번호");
+            }
             catch (SQLException e){
                 SqlExceptionAlert.alert("글자수초과");
             }
@@ -100,7 +107,7 @@ public class RentDAO extends InterfaceDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            closeConn(conn,pstmt,null);
+            closeConn(conn, pstmt, null);
         }
     }
 
@@ -153,6 +160,7 @@ public class RentDAO extends InterfaceDAO{
 
         return rl;
     }
+
 
 
     public static void deleteRent(String s) {

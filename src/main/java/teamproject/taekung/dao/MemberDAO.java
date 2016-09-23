@@ -13,7 +13,7 @@ import java.util.List;
 public class MemberDAO extends InterfaceDAO{
 
     private static String insertMember = "insert into member (mno,name,phone,cellphone,birthdate,addr,email) " +
-                                        " values (mno.nextval, ?,?,?,?,?,?)";
+            " values (mno.nextval, ?,?,?,?,?,?)";
     private static String findMember = "select * from member ORDER BY mno DESC ";
     private static String showMemberOne = "select * from member where mno = ?";
     private static String modifyMember = "UPDATE member set name = ?, phone = ?, cellphone = ?, " +
@@ -97,7 +97,7 @@ public class MemberDAO extends InterfaceDAO{
             rs = pstmt.executeQuery();
 
             while (rs.next()){
-                 m = new MemberModel(rs.getInt("mno"),rs.getString("name"),rs.getString("phone"),rs.getString("cellphone"),
+                m = new MemberModel(rs.getInt("mno"),rs.getString("name"),rs.getString("phone"),rs.getString("cellphone"),
                         rs.getString("birthdate").substring(0,10),rs.getString("addr"),rs.getString("email"));
 
             }
@@ -183,12 +183,21 @@ public class MemberDAO extends InterfaceDAO{
         try {
             pstmt = conn.prepareStatement(dropMember);
             pstmt.setString(1,s);
-            pstmt.executeUpdate();
+
+
+
+            try {
+                pstmt.executeUpdate();
+            }
+            catch (SQLException e){
+                SqlExceptionAlert.alert("해당 회원은 현재 도서를 대여중이라 삭제할수 없습니다");
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            closeConn(conn,pstmt,null);
+            closeConn(conn, pstmt, null);
         }
 
     }

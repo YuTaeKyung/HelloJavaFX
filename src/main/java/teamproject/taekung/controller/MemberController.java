@@ -8,16 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import teamproject.taekung.dao.MemberDAO;
 import teamproject.taekung.model.MemberModel;
 
@@ -58,7 +56,7 @@ public class MemberController implements Initializable {
 
     private static String findMemberName = "select * from member where name = ? ";
     private static String findMemberCellphone = "select * from member where cellphone = ?";
-
+    public static boolean d = false;
 
 
 
@@ -186,12 +184,16 @@ public class MemberController implements Initializable {
 
     public void deleteMember(ActionEvent event) {
 
-        MemberDAO.deleteMember(mno.getText());
+        MemberController.alertDelete(event,null);
+        if (d) {
+            MemberDAO.deleteMember(mno.getText());
 
-        mblist.clear();
+            mblist.clear();
 
-        for(MemberModel m : MemberDAO.selectMemberAll()) {
-            mblist.add(m);
+            for (MemberModel m : MemberDAO.selectMemberAll()) {
+                mblist.add(m);
+            }
+            d = false;
         }
     }
 
@@ -250,5 +252,26 @@ public class MemberController implements Initializable {
         alt.setHeaderText(null);
         alt.setContentText(s);
         alt.showAndWait();
+    }
+
+    public static void alertDelete(ActionEvent ae,WindowEvent we){
+        Alert alt = new Alert(Alert.AlertType.CONFIRMATION);
+        alt.setTitle("데이터 삭제");
+        alt.setHeaderText(null);
+        alt.setContentText("데이터를 삭제하시겠습니까?");
+
+        ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        ButtonType no = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alt.getButtonTypes().setAll(ok,no);
+
+
+        String text = alt.showAndWait().get().getText();
+
+        if(text.equals("OK")){
+            d = true;
+        } else {
+            if(ae !=null) ae.consume();
+            if(we !=null) we.consume();
+        }
     }
 }

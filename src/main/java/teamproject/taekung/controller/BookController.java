@@ -8,16 +8,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import teamproject.taekung.dao.BookDAO;
 import teamproject.taekung.model.BookModel;
 
@@ -43,7 +41,7 @@ public class BookController implements Initializable {
 
     private static String findbookname = "select * from book where bname = ? ";
     private static String findBno = "select * from book where bno = ? ";
-
+    public static boolean d = false;
 
 
     @Override
@@ -170,13 +168,16 @@ public class BookController implements Initializable {
     }
 
     public void deleteBook(ActionEvent event) {
+        BookController.alertDelete(event,null);
+        if (d) {
+            BookDAO.deleteMember(bno.getText());
 
-        BookDAO.deleteMember(bno.getText());
+            blist.clear();
 
-        blist.clear();
-
-        for(BookModel b : BookDAO.selectBookAll()) {
-            blist.add(b);
+            for (BookModel b : BookDAO.selectBookAll()) {
+                blist.add(b);
+            }
+            d = false;
         }
     }
 
@@ -236,4 +237,24 @@ public class BookController implements Initializable {
         alt.showAndWait();
     }
 
+    public static void alertDelete(ActionEvent ae,WindowEvent we){
+        Alert alt = new Alert(Alert.AlertType.CONFIRMATION);
+        alt.setTitle("데이터 삭제");
+        alt.setHeaderText(null);
+        alt.setContentText("데이터를 삭제하시겠습니까?");
+
+        ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        ButtonType no = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
+        alt.getButtonTypes().setAll(ok,no);
+
+
+        String text = alt.showAndWait().get().getText();
+
+        if(text.equals("OK")){
+            d = true;
+        } else {
+            if(ae !=null) ae.consume();
+            if(we !=null) we.consume();
+        }
+    }
 }
