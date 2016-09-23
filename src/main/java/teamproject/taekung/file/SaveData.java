@@ -17,7 +17,7 @@ public class SaveData {
 
 
     public static void saveMember(List<MemberModel> ml){
-        String fpath ="C:/java/java1/1608i/HelloJavaFX-/src/main/java/teamproject/taekung/file/projectData/memberData.dat";
+        String fpath ="C:/memberData.dat";
 
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -48,7 +48,8 @@ public class SaveData {
 
 
     public static void saveBook(List<BookModel> bl){
-        String fpath = "C:/java/java1/1608i/HelloJavaFX-/src/main/java/teamproject/taekung/file/projectData/bookData.dat";
+//        String fpath = "C:/java/java1/1608i/HelloJavaFX-/src/main/java/teamproject/taekung/file/projectData/bookData.dat";
+        String fpath = "C:/bookData.dat";
         FileWriter fw = null;
         BufferedWriter bw = null;
         BookModel bm = null;
@@ -78,7 +79,7 @@ public class SaveData {
     }
 
     public static void saveRent(ObservableList<RentModel> rl) {
-        String fpath = "C:/java/java1/1608i/HelloJavaFX-/src/main/java/teamproject/taekung/file/projectData/rentData.dat";
+        String fpath = "C:/rentData.dat";
         FileWriter fw = null;
         BufferedWriter bw = null;
         RentModel rm = null;
