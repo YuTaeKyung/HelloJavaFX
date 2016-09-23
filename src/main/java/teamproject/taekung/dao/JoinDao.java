@@ -37,9 +37,12 @@ public class JoinDao extends InterfaceDAO{
 
             try {
                 pstmt.executeUpdate();
+            }catch (SQLIntegrityConstraintViolationException ex){
+                SqlExceptionAlert.alert("중복된아이디입니다");
+                s = true;
             }
             catch (SQLException e){
-                e.printStackTrace();
+
                 SqlExceptionAlert.alert("글자수초과");
                 s = true;
             }
@@ -49,7 +52,7 @@ public class JoinDao extends InterfaceDAO{
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            closeConn(conn,pstmt,null);
+            closeConn(conn, pstmt, null);
         }
 
     }
