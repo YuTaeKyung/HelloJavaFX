@@ -39,6 +39,7 @@ public class JoinDao extends InterfaceDAO{
                 pstmt.executeUpdate();
             }
             catch (SQLException e){
+                e.printStackTrace();
                 SqlExceptionAlert.alert("글자수초과");
                 s = true;
             }

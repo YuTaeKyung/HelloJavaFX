@@ -7,6 +7,8 @@ CREATE TABLE manager(
   storename VARCHAR2(20) NOT NULL
 );
 select * from manager;
+DROP table manager;
+
 
 update manager set email = 'abc@def.com' where email = '123456';
 UPDATE manager SEt phone = '01012345678' where id = 'root';

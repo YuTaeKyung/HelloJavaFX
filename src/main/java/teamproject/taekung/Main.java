@@ -14,7 +14,7 @@ import teamproject.taekung.controller.MainController;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("../../../resources/fxml/Main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Main.fxml"));
         Parent root = loader.load();
         stage.setTitle("도서대여프로그램");
         stage.setScene(new Scene(root));

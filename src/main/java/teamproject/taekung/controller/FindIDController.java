@@ -29,6 +29,7 @@ public class FindIDController {
     public void findID(ActionEvent event) {
         List list = FindIDDao.selectID(email.getText(),phone.getText());
 
+        System.out.println(list.size());
 
         if(email.getText().equals("")){id.setText("이메일을 입력해주세요");}
         else if(phone.getText().equals("")){id.setText("전화번호를 입력해주세요");}

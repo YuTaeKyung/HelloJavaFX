@@ -22,9 +22,14 @@ public class FindIDDao extends InterfaceDAO{
         conn = openConn();
 
         try {
+
+            findid = "select id from manager where EMAIL = '"+e+"' and phone = '"+p+"'";
+
             pstmt = conn.prepareStatement(findid);
-            pstmt.setString(1,e);
-            pstmt.setString(2,p);
+            //pstmt.setString(1,e);
+           // pstmt.setString(2,p);
+
+            System.out.println(e+"/"+p);
 
             rs = pstmt.executeQuery();
 
@@ -51,10 +56,11 @@ public class FindIDDao extends InterfaceDAO{
         List<UserVO> list = new ArrayList<>();
         conn = openConn();
         try {
+            findpwd = "select pwd from manager where id = '"+i+"' and  EMAIL = '"+em+"' and phone = '"+pw+"'";
             pstmt=conn.prepareStatement(findpwd);
-            pstmt.setString(1,i);
-            pstmt.setString(2,em);
-            pstmt.setString(3,pw);
+//            pstmt.setString(1,i);
+//            pstmt.setString(2,em);
+//            pstmt.setString(3,pw);
             rs=pstmt.executeQuery();
 
             while (rs.next()){
